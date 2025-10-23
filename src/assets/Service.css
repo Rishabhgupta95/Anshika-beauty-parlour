@@ -1,0 +1,40 @@
+.service-container {
+  padding: 50px;
+  background-color: #f0f8ff;
+  text-align: center;
+}
+
+/* Aliases so components using different classNames still pick up styles */
+.services-page { padding: 50px; background-color: #f0f8ff; text-align: center; }
+.services-page .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 1100px; margin: auto; }
+.services-page .service-card { background: rgba(255,255,255,0.04); border-radius: 12px; padding: 18px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+
+@media (max-width: 360px) {
+  .services-page { padding: 18px; }
+  .services-page .services-grid { grid-template-columns: 1fr; gap: 8px; }
+  .services-page .service-card { padding: 12px; }
+  .service-title { font-size: 1.2rem; }
+}
+
+.service-title {
+  font-size: 2.5rem;
+  color: #0077b6;
+  margin-bottom: 20px;
+}
+
+.service-list {
+  list-style-type: none;
+  padding: 0;
+  font-size: 1.2rem;
+  color: #023e8a;
+}
+
+.service-list li {
+  margin: 10px 0;
+  transition: transform 0.3s;
+}
+
+.service-list li:hover {
+  transform: scale(1.05);
+  color: #0096c7;
+}

@@ -1,0 +1,36 @@
+.about-container {
+  padding: 50px;
+  text-align: center;
+  background-color: #fff0f5;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.about-title {
+  font-size: 3rem;
+  color: #d6336c;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 360px) {
+  .about-container { padding: 18px; }
+  .about-title { font-size: 1.25rem; }
+  .about-description { font-size: 0.95rem; max-width: 280px; }
+}
+
+/* Component alias */
+.about-page { padding: 50px; text-align: center; background-color: #fff0f5; }
+.about-page h1 { font-size: 2.5rem; color: #d6336c; margin-bottom: 16px; }
+
+.about-description {
+  font-size: 1.2rem;
+  color: #333;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Simple fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
