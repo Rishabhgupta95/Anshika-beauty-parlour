@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./About.css";
 
 function About() {
+  const [rating, setRating] = useState(0);
+  const [hover, setHover] = useState(0);
+  const [message, setMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  function submitFeedback(e) {
+    e.preventDefault();
+    setSubmitted(true);
+    console.log('Feedback submitted', { rating, message });
+  }
+
   return (
     <div className="about-page">
       <h1>About Anshika &amp; Beauty Parlour</h1>
@@ -29,6 +40,43 @@ function About() {
           loading="lazy"
         ></iframe>
       </div>
+
+      <section className="rating-section">
+        <h2>Rate &amp; Leave Feedback</h2>
+        {submitted ? (
+          <div className="thank-you">Thank you for your feedback! We appreciate your time.</div>
+        ) : (
+          <form className="feedback-form" onSubmit={submitFeedback}>
+            <div className="stars" role="radiogroup" aria-label="Rating">
+              {[1,2,3,4,5].map((i) => (
+                <button
+                  type="button"
+                  key={i}
+                  className={`star ${i <= (hover || rating) ? 'filled' : ''}`}
+                  onClick={() => setRating(i)}
+                  onMouseEnter={() => setHover(i)}
+                  onMouseLeave={() => setHover(0)}
+                  aria-checked={rating === i}
+                  aria-label={`${i} star${i>1? 's' : ''}`}
+                >
+                  ★
+                </button>
+              ))}
+            </div>
+
+            <textarea
+              placeholder="Tell us what you liked or what we can improve..."
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              rows={4}
+            />
+
+            <div className="actions">
+              <button type="submit" className="submit-btn">Send Feedback</button>
+            </div>
+          </form>
+        )}
+      </section>
     </div>
   );
 }

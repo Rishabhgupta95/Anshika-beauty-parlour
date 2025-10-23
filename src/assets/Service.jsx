@@ -21,7 +21,7 @@ function Services() {
           <div key={i} className="service-card">
             <img src={`${s.img}?q=80&w=800&auto=format&fit=crop`} alt={s.name} className="service-img" />
             <h3>{s.name}</h3>
-            <p style={{ color: 'var(--muted)' }}>Starting at <strong>₹799</strong>. Custom bridal packages available.</p>
+            <p style={{ color: 'var(--muted)' }}><strong> Custom bridal packages available.</strong></p>
             <div style={{ marginTop: 12 }}>
               <a href="/contact" className="btn-secondary">Book Now</a>
             </div>

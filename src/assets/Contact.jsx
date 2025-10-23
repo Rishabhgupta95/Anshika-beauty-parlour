@@ -28,7 +28,8 @@ function Contact() {
           </p>
 
           <h4 style={{ marginTop: 12 }}>Hours</h4>
-          <p>sun - fri: 10:00 AM — 7:00 PM · sat: Closed</p>
+          <p>sun - fri: 10:00 AM — 7:00 PM </p>
+          <p>•sat: Closed</p>
         </div>
       </div>
     </div>
