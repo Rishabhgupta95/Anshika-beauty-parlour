@@ -58,6 +58,12 @@
   color:black;
 }
 
+ .contact-info > p > a{
+    color: rgb(230, 139, 154);
+    font-size: 80%;
+    font-weight: bolder;
+ }
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -68,4 +74,5 @@
   .contact-title { font-size: 1.2rem; }
   .contact-form input, .contact-form textarea { padding: 10px; font-size: 0.95rem; }
   .contact-form button { padding: 10px 18px; font-size: 0.95rem; }
+
 }
